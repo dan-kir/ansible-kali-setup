@@ -1,0 +1,14 @@
+---
+- name: SHARPCOLLECTION - Clone SharpCollection executables
+  git:
+    repo: https://github.com/Flangvik/SharpCollection
+    dest: /usr/share/SharpCollection
+    depth: 1
+    accept_hostkey: yes
+    version: master
+    clone: yes
+    update: no
+    filter: "{{ item }}"
+  with_items:
+    - "NetFramework_4.7_Any/"
+  become: yes

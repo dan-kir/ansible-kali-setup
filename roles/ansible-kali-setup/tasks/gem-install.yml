@@ -1,0 +1,11 @@
+---
+- name: GEM-INSTALL - Check if Ruby installed
+    ansible.builtin.apt:
+      name: ruby
+      state: present
+    register: ruby_pkg_status
+
+- name: GEM-INSTALL - Install Ruby Gems
+  community.general.gem:
+    name: "{{ gem_packages }}"
+    state: latest

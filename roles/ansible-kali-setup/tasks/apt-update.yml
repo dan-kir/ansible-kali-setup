@@ -1,0 +1,14 @@
+---
+- name: APT-UPDATE - Update Apt repository cache (apt update)
+  ansible.builtin.apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: APT-UPDATE - Upgtade all packages to their latest version (apt upgrade)
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+
+- name: APT-UPDATE - Upgrade the OS (apt dist-upgrade)
+  ansible.builtin.apt:
+    upgrade: dist

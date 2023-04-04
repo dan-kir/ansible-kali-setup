@@ -1,0 +1,17 @@
+---
+- name: RSACTFTOOL - Git clone the RsaCtfTool repo
+  ansible.builtin.git:
+    repo: https://github.com/RsaCtfTool/RsaCtfTool
+    dest: /usr/share/RsaCtfTool
+
+- name: RSACTFTOOL - Install RsaCtfTool dependencies
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - libgmp3-dev
+    - libmpc-dev
+
+- name: RSACTFTOOL - Install Python PIP requirements
+  ansible.builtin.pip:
+    requirements: /usr/share/RsaCtfTool/requirements.txt

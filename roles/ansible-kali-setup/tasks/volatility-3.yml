@@ -1,0 +1,33 @@
+---
+- name: VOLATILITY3 - Git clone the Volatility3 repo
+  ansible.builtin.git:
+    repo: https://github.com/volatilityfoundation/volatility3
+    dest: /usr/share/volatility3
+
+- name: VOLATILITY3 - Install Python PIP requirements
+  ansible.builtin.pip:
+    requirements: /usr/share/volatility3/requirements.txt
+
+- name: VOLATILITY3 - Check that Volatility symbols do not already exist
+  ansible.builtin.stat:
+    path: /usr/share/volatility3/volatility3/symbols/windows.zip
+  register: volatility_symbols_check
+  check_mode: no
+
+- name: VOLATILITY3 - Download Volatility Windows Symbols
+  ansible.builtin.get_url :
+    url: https://downloads.volatilityfoundation.org/volatility3/symbols/windows.zip
+    dest: /usr/share/volatility3/volatility3/symbols/windows.zip
+    hecksum: "231d69735b9a5482b16bdbf1ec356e0a95574c44079e68dfb02ebddb34d55f3e"
+    checksum_algorithm: "sha256"
+  when: volatility_symbols_check.stat.exists == False
+  ignore_errors: yes
+
+- name: VOLATILITY3 - Download Volatility Linux Symbols
+  ansible.builtin.get_url :
+    url: https://downloads.volatilityfoundation.org/volatility3/symbols/linux.zip
+    dest: /usr/share/volatility3/volatility3/symbols/linux.zip
+    checksum: "d9d03616858c8247d62921656c1238e54daa7aa024c1b496ec624fd90c6231e2"
+    checksum_algorithm: "sha256"
+  when: volatility_symbols_check.stat.exists == False
+  ignore_errors: yes

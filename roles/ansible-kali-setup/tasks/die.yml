@@ -1,0 +1,18 @@
+---
+- name: DIE - Check that Detect-it-Easy AppImage does not already exist
+  ansible.builtin.stat:
+    path: /home/{{ ansible_user }}/.local/share/appimage/Detect_It_Easy.AppImage
+  register: die_appimage_check
+  check_mode: no
+
+- name: DIE - Download Detect-it-Easy AppImage
+  ansible.builtin.get_url :
+    url: https://github.com/horsicq/DIE-engine/releases/download/3.07/Detect_It_Easy-3.07-x86_64.AppImage
+    dest: /home/{{ ansible_user }}/.local/share/appimage/Detect_It_Easy.AppImage
+  when: die_appimage_check.stat.exists == False
+  ignore_errors: yes
+
+- name: DIE - Make Detect-it-Easy AppImage executable
+  ansible.builtin.file:
+    path: /home/{{ ansible_user }}/.local/share/appimage/Detect_It_Easy.AppImage
+    mode: 'u+x'

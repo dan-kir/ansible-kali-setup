@@ -1,0 +1,66 @@
+---
+gem_packages:
+- winrm
+- winrm-fs
+- stringio
+- rubyntlm
+- evil-winrm
+- zteg
+
+pip_packages:
+- pwntools
+- pycrypto
+- distorm3
+- pypykatz
+- minikerberos
+- git+https://github.com/Tib3rius/AutoRecon.git
+
+apt_packages:
+- apktool
+- awscli
+- chromium
+- docker.io
+- dnsrecon
+- enum4linux
+- htop
+- neovim
+- checksec
+- impacket-scripts
+- qemu-user-static
+- torbrowser-launcher
+- tor
+- termshark
+- libreoffice
+- filezilla
+- exiftool
+- qrencode
+- zbar-tools
+- imagemagick
+- gobuster
+- gdb
+- snmp-mibs-downloader
+- neo4j
+- bloodhound
+- maltego
+- seclists
+- ghidra
+- python3-evtx
+- redis-tools
+- powershell
+- openjdk-11-jdk
+- maven
+- python3-impacket
+- python3-jwcrypto
+- python3-dev
+- python3-venv
+- build-essential
+- pngcheck
+- outguess
+- stegcracker
+- stegsnow
+- gimp
+- sonic-visualiser
+- fcrackzip
+- pdfcrack
+- sliver
+- winetricks

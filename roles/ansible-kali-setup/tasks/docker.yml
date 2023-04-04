@@ -1,0 +1,19 @@
+---
+- name: DOCKER - Install docker.io package
+  ansible.builtin.apt:
+    name: docker.io
+    state: present
+
+- name: DOCKER - Start and enable docker service
+  ansible.builtin.systemd:
+    name: docker.service
+    enabled: yes
+    state: started
+    masked: no
+  changed_when: false
+
+- name: DOCKER - Add current user to docker group
+  ansible.builtin.user:
+    name: "{{ ansible_user }}"
+    groups: "docker"
+    append: yes

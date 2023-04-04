@@ -1,0 +1,11 @@
+---
+- name: PIP-INSTALL - Check if Python package installer installed (pip)
+    ansible.builtin.apt:
+      name: python3-pip
+      state: present
+    register: pip_pkg_status
+
+- name: PIP-INSTALL - Install Python packages
+  ansible.builtin.pip:
+    name: "{{ pip_packages }}"
+  when: pip_pkg_status.stat.exists == True
