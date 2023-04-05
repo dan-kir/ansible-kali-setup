@@ -1,4 +1,21 @@
 ---
+firefox_addons:
+  - name: ublock
+    filename: ublock_origin-1.48.2.xpi
+    url: https://addons.mozilla.org/firefox/downloads/file/4090059/ublock_origin-1.48.2.xpi
+  - name: foxyproxy
+    filename: foxyproxy_standard-7.5.1.xpi
+    url: https://addons.mozilla.org/firefox/downloads/file/3616824/foxyproxy_standard-7.5.1.xpi
+  - name: wappalyzer
+    filename: wappalyzer-6.10.56.xpi
+    url: https://addons.mozilla.org/firefox/downloads/file/4083798/wappalyzer-6.10.56.xpi
+  - name: useragentswitcher
+    filename: user_agent_string_switcher-0.4.9.xpi
+    url: https://addons.mozilla.org/firefox/downloads/file/4047133/user_agent_string_switcher-0.4.9.xpi
+  - name: cookieeditor
+    filename: cookie_editor-1.11.0.xpi
+    url: https://addons.mozilla.org/firefox/downloads/file/4081799/cookie_editor-1.11.0.xpi
+
 sharpcollection_exes:
   - name: ADCollector.exe
   - name: ADSearch.exe

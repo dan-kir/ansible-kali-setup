@@ -8,6 +8,7 @@
   ansible.builtin.pip:
     requirements: /usr/share/volatility3/requirements.txt
   become: false
+  changed_when: false
 
 - name: VOLATILITY3 - Check that Volatility symbols do not already exist
   ansible.builtin.stat:

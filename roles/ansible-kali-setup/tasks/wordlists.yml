@@ -6,9 +6,5 @@
   check_mode: false
 
 - name: WORDLISTS - Unzip Rockyou gzip archive
-  ansible.builtin.unarchive:
-    src: /usr/share/wordlists/rockyou.txt.gz
-    dest: /usr/share/wordlists/rockyou.txt
-    extra_opts: "-z"
-    format: "gzip"
+  ansible.builtin.command: gunzip /usr/share/wordlists/rockyou.txt.gz
   when: rockyou_check.stat.exists == false

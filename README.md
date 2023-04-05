@@ -10,6 +10,8 @@ Requirements
 ------------
 Requires Ansible 2.10 or later.
 
+14 GiB starting
+
 
 Quick Start
 ------------
