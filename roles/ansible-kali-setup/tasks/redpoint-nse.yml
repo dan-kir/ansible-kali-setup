@@ -2,11 +2,11 @@
 - name: REDPOINT NSE - Git clone the Redpoint repo
   ansible.builtin.git:
     repo: https://github.com/digitalbond/Redpoint
-    dest: {{ temp_dir }}/Redpoint
+    dest: "/tmp/Redpoint"
 
 - name: REDPOINT NSE - Register all .nse files
   find:
-    paths: {{ temp_dir }}/Redpoint/
+    paths: "/tmp/Redpoint/"
     patterns: "*.nse"
   register: redpoint_nse_files
 
@@ -14,4 +14,6 @@
   ansible.builtin.file:
     src: "{{ item.path }}"
     dest: "/usr/share/nmap/scripts/{{ item.name }}"
+    owner: "{{ kali_user }}"
+    group: "{{ kali_user }}"
   with_items: "{{ redpoint_nse_files.files }}"

@@ -3,7 +3,7 @@
   ansible.builtin.stat:
     path: /usr/share/wordlists/rockyou.txt
   register: rockyou_check
-  check_mode: no
+  check_mode: false
 
 - name: WORDLISTS - Unzip Rockyou gzip archive
   ansible.builtin.unarchive:
@@ -12,4 +12,4 @@
     remote_src: yes
     extra_opts: "-z"
     format: "gzip"
-  when: rockyou_check.stat.exists == False
+  when: rockyou_check.stat.exists == false

@@ -15,3 +15,4 @@
 - name: RSACTFTOOL - Install Python PIP requirements
   ansible.builtin.pip:
     requirements: /usr/share/RsaCtfTool/requirements.txt
+  become: false

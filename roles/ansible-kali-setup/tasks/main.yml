@@ -1,15 +1,4 @@
 ---
-- name: Create temporary directory to hold any temporary files
-  ansible.builtin.tempfile:
-    state: directory
-    suffix: hardening
-  register: mktemp_result
-
-- name: Set a fact for the temporary directory
-  ansible.builtin.set_fact:
-    temp_dir: "{{ mktemp_result.path }}"
-  changed_when: False
-
 - ansible.builtin.import_tasks: apt-update.yml
 
 - ansible.builtin.import_tasks: apt-install.yml
@@ -22,7 +11,11 @@
 
 - ansible.builtin.import_tasks: docker.yml
 
+- ansible.builtin.import_tasks: dettect.yml
+
 - ansible.builtin.import_tasks: die.yml
+
+- ansible.builtin.import_tasks: ngrok.yml
 
 - ansible.builtin.import_tasks: pulsar.yml
 
@@ -33,5 +26,7 @@
 - ansible.builtin.import_tasks: sharpcollection.yml
 
 - ansible.builtin.import_tasks: volatility-3.yml
+
+- ansible.builtin.import_tasks: wallpaper.yml
 
 - ansible.builtin.import_tasks: wordlists.yml

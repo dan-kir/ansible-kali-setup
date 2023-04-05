@@ -1,0 +1,10 @@
+---
+#- name: WALLPAPER - Copy wallpaper image
+#    copy:
+#      src: /path/to/wallpaper.jpg
+#      dest: /usr/share/backgrounds/kali/wallpaper.jpg
+#      mode: '0644'
+
+- name: WALLPAPER - Set wallpaper
+    command: gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/kali/kali-cubism-16x9.jpg
+    ignore_errors: true

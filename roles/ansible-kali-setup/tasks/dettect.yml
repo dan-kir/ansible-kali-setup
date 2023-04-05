@@ -1,0 +1,17 @@
+---
+- name: DETTECT - Pull latest DeTTECT Docker image
+    community.docker.docker_image:
+      name: rabobankcdc/dettect:latest
+
+- name: DETTECT - Create DeTTECT Docker container
+    community.docker.docker_container:
+      name: dettect
+      image: rabobankcdc/dettect:latest
+      command: /bin/bash
+      interactive: true
+      tty: true
+      ports:
+        - "8080:8080"
+      volumes:
+        - "$(pwd)/output:/opt/DeTTECT/output"
+        - "$(pwd)/input:/opt/DeTTECT/input"

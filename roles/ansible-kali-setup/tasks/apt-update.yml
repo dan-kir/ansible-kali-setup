@@ -4,7 +4,7 @@
     update_cache: yes
     cache_valid_time: 3600
 
-- name: APT-UPDATE - Upgtade all packages to their latest version (apt upgrade)
+- name: APT-UPDATE - Upgrade all packages to their latest version (apt upgrade)
   ansible.builtin.apt:
     name: "*"
     state: latest

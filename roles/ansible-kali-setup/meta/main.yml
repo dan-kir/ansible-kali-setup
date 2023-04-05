@@ -10,7 +10,7 @@ galaxy_info:
   platforms:
   - name: Kali
     versions:
-      - Rolling
+      - 2023.1
   categories:
   - security
   - system

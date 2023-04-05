@@ -2,50 +2,40 @@ ansible-kali-setup
 ==============================
 [![Actively Maintained](https://img.shields.io/badge/Maintenance%20Level-Actively%20Maintained-green.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
 
-Sets up Kali Linux the way I like it
+Setup Kali Linux the way I like it.
+
+Installs tools useful for penetration testing, adversary emulation and CTFs.
 
 Requirements
 ------------
 Requires Ansible 2.10 or later.
 
-`sudo apt install -y ansible`
 
-ansible -i
+Quick Start
+------------
+```bash
+## Perform updates
+sudo apt update -y && sudo apt upgrade -y
+
+## Install Ansible
+sudo apt install -y ansible
+
+## Download the playbook
+git clone https://github.com/dan-kir/ansible-kali-setup
+
+cd ./ansible-kali-setup
+
+## Run Playbook
+ansible-playbook ansible-kali-setup.yml -v -K
+
+```
+
 
 Role Variables
 --------------
+Kali user is default 'kali'
 
-
-Dependencies
-------------
-
-
-Example Playbook
-----------------
-
-    - hosts: all
-      become: yes
-      become_method: sudo
-      roles:
-        - ansible-debian-11-blah
-
-
-Example Inventory
------------------
-
-*inventory.ini*
-
-    [servers]
-    192.168.0.11 ansible_ssh_user=admin
-
-*inventory.yml*
-
-    ---
-    all:
-      hosts:
-        192.168.0.11:
-      vars:
-        ansible_ssh_user: admin
+This can be changed at `roles/ansible-kali-setup/defaults/main.yml`
 
 License
 -------

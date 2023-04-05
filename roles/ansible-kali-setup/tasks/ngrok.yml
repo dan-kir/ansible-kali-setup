@@ -1,0 +1,16 @@
+---
+- name: NGROK - Install Ngrok signing key
+  ansible.builtin.apt_key:
+    url: https://ngrok-agent.s3.amazonaws.com/ngrok.asc
+    state: present
+
+- name: NGROK - Configure Ngrok repository
+  ansible.builtin.apt_repository:
+    repo: 'deb https://ngrok-agent.s3.amazonaws.com buster main'
+    state: present
+    update_cache: true
+
+- name: NGROK - Install Ngrok package
+  ansible.builtin.apt:
+    name: ngrok
+    state: present

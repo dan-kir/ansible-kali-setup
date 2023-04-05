@@ -14,6 +14,6 @@
 
 - name: DOCKER - Add current user to docker group
   ansible.builtin.user:
-    name: "{{ ansible_user }}"
+    name: "{{ kali_user }}"
     groups: "docker"
     append: yes

@@ -1,6 +1,6 @@
 ---
 - name: SHARPCOLLECTION - Clone SharpCollection executables
-  git:
+  ansible.builtin.git:
     repo: https://github.com/Flangvik/SharpCollection
     dest: /usr/share/SharpCollection
     depth: 1
@@ -11,4 +11,3 @@
     filter: "{{ item }}"
   with_items:
     - "NetFramework_4.7_Any/"
-  become: yes

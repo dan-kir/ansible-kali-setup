@@ -1,18 +1,20 @@
 ---
 - name: PULSAR - Check that Pulsar AppImage does not already exist
   ansible.builtin.stat:
-    path: /home/{{ ansible_user }}/.local/share/appimage/Pulsar.AppImage
+    path: /home/{{ kali_user }}/.local/share/appimage/Pulsar.AppImage
   register: pulsar_appimage_check
-  check_mode: no
+  check_mode: false
 
 - name: PULSAR - Download Pulsar AppImage
   ansible.builtin.get_url :
     url: https://api.cirrus-ci.com/v1/artifact/task/4549166127382528/binary/binaries/Pulsar-1.103.2023040323.AppImage
-    dest: /home/{{ ansible_user }}/.local/share/appimage/Pulsar.AppImage
-  when: pulsar_appimage_check.stat.exists == False
-  ignore_errors: yes
+    dest: /home/{{ kali_user }}/.local/share/appimage/Pulsar.AppImage
+  when: pulsar_appimage_check.stat.exists == false
+  ignore_errors: true
 
 - name: PULSAR - Make Pulsar AppImage executable
   ansible.builtin.file:
-    path: /home/{{ ansible_user }}/.local/share/appimage/Pulsar.AppImage
+    path: /home/{{ kali_user }}/.local/share/appimage/Pulsar.AppImage
+    owner: "{{ kali_user }}"
+    group: "{{ kali_user }}"
     mode: 'u+x'

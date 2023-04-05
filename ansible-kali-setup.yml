@@ -1,6 +1,6 @@
 ---
 - name: Post install setup playbook for Kali Linux
   hosts: localhost
-  become: yes
+  become: true
   roles:
     - ansible-kali-setup
