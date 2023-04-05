@@ -1,2 +1,9 @@
 ---
 kali_user: kali
+
+## Note sagemath will require ~3 GiB additional disk space
+sagemath_enabled: True
+
+sharpcollection_enabled: True
+
+volatility-3_enabled: True

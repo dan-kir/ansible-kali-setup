@@ -16,3 +16,4 @@
   ansible.builtin.pip:
     requirements: /usr/share/RsaCtfTool/requirements.txt
   become: false
+  changed_when: false

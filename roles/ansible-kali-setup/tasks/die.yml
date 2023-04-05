@@ -1,4 +1,10 @@
 ---
+- name: DIE - Create AppImages directory
+  ansible.builtin.file:
+    path: /home/{{ kali_user }}/.local/share/appimage/
+    state: directory
+    owner: "{{ kali_user }}"
+
 - name: DIE - Check that Detect-it-Easy AppImage does not already exist
   ansible.builtin.stat:
     path: /home/{{ kali_user }}/.local/share/appimage/Detect_It_Easy.AppImage

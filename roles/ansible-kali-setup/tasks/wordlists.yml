@@ -9,7 +9,6 @@
   ansible.builtin.unarchive:
     src: /usr/share/wordlists/rockyou.txt.gz
     dest: /usr/share/wordlists/rockyou.txt
-    remote_src: yes
     extra_opts: "-z"
     format: "gzip"
   when: rockyou_check.stat.exists == false

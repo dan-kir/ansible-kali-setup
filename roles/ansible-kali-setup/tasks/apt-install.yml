@@ -1,5 +1,5 @@
 ---
-- name: APT-INSTALL - Install packages from Apt repositories
+- name: APT-INSTALL - Install packages from Apt repositories (this might take a while)
   ansible.builtin.apt:
     name: "{{ apt_packages }}"
     state: present

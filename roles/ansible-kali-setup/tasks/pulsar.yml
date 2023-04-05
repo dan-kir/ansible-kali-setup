@@ -1,4 +1,10 @@
 ---
+- name: PULSAR - Create AppImages directory
+  ansible.builtin.file:
+    path: /home/{{ kali_user }}/.local/share/appimage/
+    state: directory
+    owner: "{{ kali_user }}"
+
 - name: PULSAR - Check that Pulsar AppImage does not already exist
   ansible.builtin.stat:
     path: /home/{{ kali_user }}/.local/share/appimage/Pulsar.AppImage

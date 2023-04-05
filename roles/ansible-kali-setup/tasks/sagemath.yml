@@ -1,0 +1,5 @@
+---
+- name: SAGEMATH - Install sagemath package (this might take a while)
+  ansible.builtin.apt:
+    name: sagemath
+    state: present

@@ -8,6 +8,7 @@
 
 - name: GEM-INSTALL - Install Ruby Gems
   community.general.gem:
-    name: "{{ gem_packages }}"
+    name: "{{ item.name }}"
     state: latest
   when: ruby_pkg_status.changed == false
+  with_items: "{{ gem_packages }}"

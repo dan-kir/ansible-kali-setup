@@ -1,17 +1,19 @@
 ---
 - name: DETTECT - Pull latest DeTTECT Docker image
-    community.docker.docker_image:
-      name: rabobankcdc/dettect:latest
+  community.docker.docker_image:
+    name: rabobankcdc/dettect:latest
+    source: pull
 
 - name: DETTECT - Create DeTTECT Docker container
-    community.docker.docker_container:
-      name: dettect
-      image: rabobankcdc/dettect:latest
-      command: /bin/bash
-      interactive: true
-      tty: true
-      ports:
-        - "8080:8080"
-      volumes:
-        - "$(pwd)/output:/opt/DeTTECT/output"
-        - "$(pwd)/input:/opt/DeTTECT/input"
+  community.docker.docker_container:
+    name: dettect
+    image: "rabobankcdc/dettect:latest"
+    command: /bin/bash
+    interactive: true
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/home/{{ kali_user }}/dettect/output:/opt/DeTTECT/output"
+      - "/home/{{ kali_user }}/dettect/input:/opt/DeTTECT/input"
+  changed_when: false

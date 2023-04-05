@@ -19,14 +19,18 @@
 
 - ansible.builtin.import_tasks: pulsar.yml
 
-- ansible.builtin.import_tasks: redpoint-nse.yml
-
 - ansible.builtin.import_tasks: rsactftool.yml
 
 - ansible.builtin.import_tasks: sharpcollection.yml
+  when:
+    - sharpcollection_enabled | bool
 
 - ansible.builtin.import_tasks: volatility-3.yml
+  when:
+    - volatility-3_enabled | bool
 
-- ansible.builtin.import_tasks: wallpaper.yml
+- ansible.builtin.import_tasks: sagemath.yml
+  when:
+    - sagemath_enabled | bool
 
 - ansible.builtin.import_tasks: wordlists.yml

@@ -1,11 +1,26 @@
 ---
+sharpcollection_exes:
+  - name: ADCollector.exe
+  - name: ADSearch.exe
+  - name: Certify.exe
+  - name: Inveigh.exe
+  - name: Rubeus.exe
+  - name: Seatbelt.exe
+  - name: SharpChisel.exe
+  - name: SharpHound.exe
+  - name: SharpKatz.exe
+  - name: Snaffler.exe
+  - name: StickyNotesExtract.exe
+  - name: SweetPotato.exe
+  - name: winPEAS.exe
+
 gem_packages:
-- evil-winrm
-- rubyntlm
-- stringio
-- winrm
-- winrm-fs
-- zsteg
+  - name: evil-winrm
+  - name: rubyntlm
+  - name: stringio
+  - name: winrm
+  - name: winrm-fs
+  - name: zsteg
 
 pip_packages:
 - git+https://github.com/Tib3rius/AutoRecon.git
@@ -23,6 +38,7 @@ pip_packages:
 
 apt_packages:
 - apktool
+- audacity
 - awscli
 - bloodhound
 - build-essential
