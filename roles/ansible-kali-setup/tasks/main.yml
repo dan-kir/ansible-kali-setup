@@ -19,6 +19,8 @@
 
 - ansible.builtin.import_tasks: pulsar.yml
 
+- ansible.builtin.import_tasks: firefox.yml
+
 - ansible.builtin.import_tasks: rsactftool.yml
 
 - ansible.builtin.import_tasks: sharpcollection.yml
@@ -27,7 +29,7 @@
 
 - ansible.builtin.import_tasks: volatility-3.yml
   when:
-    - volatility-3_enabled | bool
+    - volatility3_enabled | bool
 
 - ansible.builtin.import_tasks: sagemath.yml
   when:

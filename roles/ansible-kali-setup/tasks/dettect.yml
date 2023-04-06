@@ -3,6 +3,7 @@
   community.docker.docker_image:
     name: rabobankcdc/dettect:latest
     source: pull
+  register: dettect_image
 
 - name: DETTECT - Create DeTTECT Docker container
   community.docker.docker_container:
@@ -16,4 +17,5 @@
     volumes:
       - "/home/{{ kali_user }}/dettect/output:/opt/DeTTECT/output"
       - "/home/{{ kali_user }}/dettect/input:/opt/DeTTECT/input"
+  when: dettect_image.stat.exists == true
   changed_when: false

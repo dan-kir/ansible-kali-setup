@@ -6,4 +6,4 @@ sagemath_enabled: True
 
 sharpcollection_enabled: True
 
-volatility-3_enabled: True
+volatility3_enabled: True

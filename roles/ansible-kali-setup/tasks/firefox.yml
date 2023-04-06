@@ -1,15 +1,23 @@
 ---
-## Probably do this with a policy.json file instead
+- name: FIREFOX - Check that add-ons do not already exist
+  ansible.builtin.stat:
+    path: "/home/{{ kali_user }}/.mozilla/extensions/{{ item.uuid }}"
+  register: firefox_addons_check
+  check_mode: false
+  with_items: "{{ firefox_addons }}"
+
 - name: FIREFOX - Download add-on files
   uri:
     url: "{{ item.url }}"
     dest: "/tmp/"
   with_items: "{{ firefox_addons }}"
+  when: firefox_addons_check.stat.exists == false
 
 - name: FIREFOX - Copy add-on file to Firefox extensions directory
   copy:
     src: "/tmp/{{ item.filename }}"
-    dest: "/home/{{ kali_user }}/.mozilla/firefox/{{ lookup('env', 'MOZILLA_PROFILE') }}/extensions/{{ item.filename }}"
+    dest: "/home/{{ kali_user }}/.mozilla/extensions/{{ item.uuid }}"
     mode: "0644"
     owner: "{{ kali_user }}"
   with_items: "{{ firefox_addons }}"
+  when: firefox_addons_check.stat.exists == false
