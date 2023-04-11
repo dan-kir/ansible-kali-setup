@@ -70,7 +70,9 @@ apt_packages:
 - build-essential
 - checksec
 - chromium
+- cyberchef
 - docker.io
+- docker-compose
 - dnsrecon
 - enum4linux
 - exiftool
@@ -113,5 +115,6 @@ apt_packages:
 - torbrowser-launcher
 - tor
 - winetricks
+- yara
 - zbar-tools
 - zeek

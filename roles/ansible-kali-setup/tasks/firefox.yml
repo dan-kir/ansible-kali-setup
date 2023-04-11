@@ -1,23 +1,30 @@
 ---
-- name: FIREFOX - Check that add-ons do not already exist
+## Install addons using policy - https://support.mozilla.org/en-US/kb/deploying-firefox-with-extensions
+
+- name: FIREFOX - Check that extensions do not already exist
   ansible.builtin.stat:
-    path: "/home/{{ kali_user }}/.mozilla/extensions/{{ item.uuid }}"
+    path: "/home/kali/.mozilla/extensions/{{ item.uuid }}.xpi"
   register: firefox_addons_check
   check_mode: false
   with_items: "{{ firefox_addons }}"
 
-- name: FIREFOX - Download add-on files
-  uri:
+- name: FIREFOX - Create distribution extensions directory
+  ansible.builtin.file:
+    path: /home/kali/.mozilla/extensions/
+    state: directory
+    mode: "0655"
+    owner: root
+
+- name: FIREFOX - Download extension files
+  ansible.builtin.uri:
     url: "{{ item.url }}"
     dest: "/tmp/"
   with_items: "{{ firefox_addons }}"
-  when: firefox_addons_check.stat.exists == false
 
 - name: FIREFOX - Copy add-on file to Firefox extensions directory
-  copy:
+  ansible.builtin.copy:
     src: "/tmp/{{ item.filename }}"
-    dest: "/home/{{ kali_user }}/.mozilla/extensions/{{ item.uuid }}"
+    dest: "/home/kali/.mozilla/extensions/{{ item.uuid }}.xpi"
     mode: "0644"
-    owner: "{{ kali_user }}"
+    owner: root
   with_items: "{{ firefox_addons }}"
-  when: firefox_addons_check.stat.exists == false

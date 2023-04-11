@@ -17,5 +17,4 @@
     volumes:
       - "/home/{{ kali_user }}/dettect/output:/opt/DeTTECT/output"
       - "/home/{{ kali_user }}/dettect/input:/opt/DeTTECT/input"
-  when: dettect_image.stat.exists == true
   changed_when: false
