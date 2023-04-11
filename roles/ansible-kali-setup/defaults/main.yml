@@ -1,8 +1,14 @@
 ---
 kali_user: kali
 
+golang_enabled: true
+
+rust_enabled: true
+
 ## Note sagemath will require ~3 GiB additional disk space
 sagemath_enabled: true
+
+seclists_enabled: true
 
 sharpcollection_enabled: true
 

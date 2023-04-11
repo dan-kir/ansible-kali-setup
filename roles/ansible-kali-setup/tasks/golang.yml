@@ -1,0 +1,14 @@
+---
+- name: GOLANG - Install Golang
+  ansible.builtin.apt:
+    name:
+      - golang
+    state: present
+
+## Then add the following to your .zshrc
+## export GOROOT=/usr/lib/go
+## export GOPATH=$HOME/go
+## export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+## Reload your .zshrc
+##source .zshrc

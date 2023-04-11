@@ -9,6 +9,10 @@
 
 - ansible.builtin.import_tasks: gem-install.yml
 
+- ansible.builtin.import_tasks: golang.yml
+  when:
+    - golang_enabled | bool
+
 - ansible.builtin.import_tasks: docker.yml
 
 - ansible.builtin.import_tasks: dettect.yml
@@ -20,6 +24,12 @@
 - ansible.builtin.import_tasks: pulsar.yml
 
 - ansible.builtin.import_tasks: firefox.yml
+
+- ansible.builtin.import_tasks: rita.yml
+
+- ansible.builtin.import_tasks: rust.yml
+  when:
+    - rust_enabled | bool
 
 - ansible.builtin.import_tasks: rsactftool.yml
 

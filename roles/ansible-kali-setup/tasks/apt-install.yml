@@ -3,3 +3,9 @@
   ansible.builtin.apt:
     name: "{{ apt_packages }}"
     state: present
+
+- name: APT-INSTALL - Install seclists
+  ansible.builtin.apt:
+    name: seclists
+    state: present
+  when: seclists_enabled | bool
