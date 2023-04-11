@@ -1,4 +1,9 @@
 ---
+- name: DETTECT - Git clone the DeTTECT repo
+  ansible.builtin.git:
+    repo: https://github.com/rabobank-cdc/DeTTECT
+    dest: "/home/{{ kali_user }}/dettect/"
+
 - name: DETTECT - Pull latest DeTTECT Docker image
   community.docker.docker_image:
     name: rabobankcdc/dettect:latest
@@ -18,3 +23,6 @@
       - "/home/{{ kali_user }}/dettect/output:/opt/DeTTECT/output"
       - "/home/{{ kali_user }}/dettect/input:/opt/DeTTECT/input"
   changed_when: false
+
+## docker start -i dettect
+## python dettect.py editor
