@@ -12,14 +12,16 @@
   register: cargo_check
   check_mode: false
   ignore_errors: yes
+  become: false
 
 - name: RUST - Download Rust install script
   ansible.builtin.get_url:
     url: https://sh.rustup.rs
     dest: /tmp/sh.rustup.rs
+    owner: "{{ kali_user }}"
     mode: '0755'
     force: 'yes'
-    when: cargo_check is failed
+  when: cargo_check is failed
 
 - name: RUST - install Rust and Cargo
   ansible.builtin.shell: /tmp/sh.rustup.rs -y
