@@ -4,7 +4,7 @@ ansible-kali-setup
 
 Setup Kali Linux the way I like it.
 
-Installs tools useful for penetration testing, adversary emulation and CTFs.
+Installs tools useful for penetration testing, purple-teaming and CTFs.
 
 Requirements
 ------------

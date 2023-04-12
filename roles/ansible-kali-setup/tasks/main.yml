@@ -21,6 +21,8 @@
 
 - ansible.builtin.import_tasks: ngrok.yml
 
+- ansible.builtin.import_tasks: merlin.yml
+
 - ansible.builtin.import_tasks: pulsar.yml
 
 - ansible.builtin.import_tasks: firefox.yml

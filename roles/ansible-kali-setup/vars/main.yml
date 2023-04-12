@@ -50,6 +50,7 @@ gem_packages:
 
 pip_packages:
 - git+https://github.com/Tib3rius/AutoRecon.git
+- bintropy
 - distorm3
 - flask
 - ldap3
