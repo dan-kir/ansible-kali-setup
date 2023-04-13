@@ -14,6 +14,7 @@ jobs:
     - name: Install Ansible collections
       run: |
         ansible-galaxy collection install community.general
+        ansible-galaxy collection list
 
     - name: Lint Ansible Playbook
       # replace "master" with any valid ref
