@@ -1,0 +1,12 @@
+---
+- name: WALLPAPER - Copy wallpaper to /usr/share/wallpapers
+  ansible.builtin.copy:
+    src: kali-wallpaper-custom.jpg
+    dest: "/usr/share/wallpapers/kali-wallpaper-custom.jpg"
+    mode: 0644
+  register: wallpaper_change
+
+- name: WALLPAPER - Set wallpaper using xconf
+  ansible.builtin.shell: "xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual-1/workspace0/last-image -s /usr/share/wallpapers/kali-wallpaper-custom.jpg"
+  when: wallpaper_change.changed
+  become: false

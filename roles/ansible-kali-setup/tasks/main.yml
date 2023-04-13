@@ -47,4 +47,8 @@
   when:
     - sagemath_enabled | bool
 
+- ansible.builtin.import_tasks: wallpaper.yml
+  when:
+    - wallpaper_enabled | bool
+
 - ansible.builtin.import_tasks: wordlists.yml

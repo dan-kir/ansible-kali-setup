@@ -13,3 +13,5 @@ seclists_enabled: true
 sharpcollection_enabled: true
 
 volatility3_enabled: true
+
+wallpaper_enabled: true
