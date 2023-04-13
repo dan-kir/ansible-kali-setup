@@ -7,4 +7,5 @@
 
 - name: WORDLISTS - Unzip Rockyou gzip archive
   ansible.builtin.command: gunzip /usr/share/wordlists/rockyou.txt.gz
+  ignore_errors: true
   when: rockyou_check.stat.exists == false

@@ -1,6 +1,4 @@
 ---
-## Install addons using policy - https://support.mozilla.org/en-US/kb/deploying-firefox-with-extensions
-
 - name: FIREFOX - Create distribution extensions directory
   ansible.builtin.file:
     path: /usr/share/firefox-esr/distribution/extensions/
@@ -9,17 +7,18 @@
     owner: root
 
 - name: FIREFOX - Check that extensions do not already exist
-  ansible.builtin.stat:
-    path: "/usr/share/firefox-esr/distribution/extensions/{{ item.uuid }}.xpi"
+  ansible.builtin.find:
+    paths: /usr/share/firefox-esr/distribution/extensions/
+    patterns: "*.xpi"
+    recurse: no
   register: firefox_addons_check
-  check_mode: false
-  with_items: "{{ firefox_addons }}"
 
 - name: FIREFOX - Download extension files
   ansible.builtin.uri:
     url: "{{ item.url }}"
     dest: "/tmp/"
   with_items: "{{ firefox_addons }}"
+  when: firefox_addons_check == 0
 
 - name: FIREFOX - Copy add-on file to Firefox extensions directory
   ansible.builtin.copy:
@@ -28,3 +27,4 @@
     mode: "0644"
     owner: root
   with_items: "{{ firefox_addons }}"
+  when: firefox_addons_check == 0

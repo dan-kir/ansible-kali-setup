@@ -1,8 +1,10 @@
 ---
+## Github actions update the ATT&CK data every 24hrs
 - name: DETTECT - Git clone the DeTTECT repo
   ansible.builtin.git:
     repo: https://github.com/rabobank-cdc/DeTTECT
     dest: "/home/{{ kali_user }}/dettect/"
+  changed_when: false
 
 - name: DETTECT - Pull latest DeTTECT Docker image
   community.docker.docker_image:

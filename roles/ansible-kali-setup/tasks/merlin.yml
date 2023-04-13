@@ -11,7 +11,7 @@
   check_mode: false
 
 - name: MERLIN - Download Merlin 7z archive
-  get_url:
+  ansible.builtin.get_url:
     url: https://github.com/Ne0nd0g/merlin/releases/latest/download/merlinServer-Linux-x64.7z
     dest: /tmp/
     mode: '0755'

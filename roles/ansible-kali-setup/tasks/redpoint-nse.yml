@@ -5,7 +5,7 @@
     dest: "/tmp/Redpoint"
 
 - name: REDPOINT NSE - Register all .nse files
-  find:
+  ansible.builtin.find:
     paths: "/tmp/Redpoint/"
     patterns: "*.nse"
   register: redpoint_nse_files

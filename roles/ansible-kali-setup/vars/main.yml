@@ -115,6 +115,8 @@ apt_packages:
 - torbrowser-launcher
 - tor
 - winetricks
+- wireguard
+- wireguard-tools
 - yara
 - zbar-tools
 - zeek

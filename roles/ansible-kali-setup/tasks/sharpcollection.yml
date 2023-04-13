@@ -5,7 +5,7 @@
     state: directory
 
 - name: SHARPCOLLECTION - Download select SharpCollection executables
-  get_url:
+  ansible.builtin.get_url:
     url: https://github.com/Flangvik/SharpCollection/raw/master/NetFramework_4.7_Any/{{ item.name }}
     dest: /usr/share/sharpcollection/
     mode: '0755'

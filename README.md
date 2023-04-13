@@ -16,7 +16,7 @@ Will require an additional ~15 GiB disk space With everything enabled,
 Quick Start
 ------------
 ```bash
-## Perform updates
+## Perform updates (optional)
 sudo apt update -y && sudo apt upgrade -y
 
 ## Install Ansible
@@ -28,7 +28,7 @@ git clone https://github.com/dan-kir/ansible-kali-setup
 cd ./ansible-kali-setup
 
 ## Run Playbook
-ansible-playbook ansible-kali-setup.yml -v -K
+ansible-playbook ansible-kali-setup.yml -K
 
 ```
 

@@ -11,4 +11,4 @@
 ## export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 ## Reload your .zshrc
-##source .zshrc
+## source .zshrc

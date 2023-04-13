@@ -2,7 +2,7 @@ Software List
 ==============================
 
 - Apktool - https://ibotpeaches.github.io/Apktool/
-Audacity
+- Audacity - https://www.audacityteam.org/
 - Autorecon - https://github.com/Tib3rius/AutoRecon
 - AWS CLI - https://aws.amazon.com/cli/
 - Bintropy - https://pypi.org/project/bintropy/
