@@ -17,7 +17,7 @@
   check_mode: false
 
 - name: VOLATILITY3 - Download Volatility Windows Symbols
-  ansible.builtin.get_url :
+  ansible.builtin.get_url:
     url: https://downloads.volatilityfoundation.org/volatility3/symbols/windows.zip
     dest: /usr/share/volatility3/volatility3/symbols/windows.zip
     checksum: "sha256:231d69735b9a5482b16bdbf1ec356e0a95574c44079e68dfb02ebddb34d55f3e"
@@ -25,7 +25,7 @@
   ignore_errors: true
 
 - name: VOLATILITY3 - Download Volatility Linux Symbols
-  ansible.builtin.get_url :
+  ansible.builtin.get_url:
     url: https://downloads.volatilityfoundation.org/volatility3/symbols/linux.zip
     dest: /usr/share/volatility3/volatility3/symbols/linux.zip
     checksum: "sha256:d9d03616858c8247d62921656c1238e54daa7aa024c1b496ec624fd90c6231e2"

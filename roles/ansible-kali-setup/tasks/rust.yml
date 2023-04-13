@@ -9,7 +9,7 @@
 
 - name: RUST - Check that Rustc does not already exist
   ansible.builtin.stat:
-    path: /home/{{ kali_user }}/.cargo/ebin/rustc
+    path: /home/{{ kali_user }}/.cargo/bin/rustc
   register: rust_check
   check_mode: false
 

@@ -7,13 +7,13 @@
 - name: DOCKER - Start and enable docker service
   ansible.builtin.systemd:
     name: docker.service
-    enabled: yes
+    enabled: true
     state: started
-    masked: no
+    masked: false
   changed_when: false
 
 - name: DOCKER - Add current user to docker group
   ansible.builtin.user:
     name: "{{ kali_user }}"
     groups: "docker"
-    append: yes
+    append: true

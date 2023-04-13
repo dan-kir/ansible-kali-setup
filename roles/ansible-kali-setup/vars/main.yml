@@ -49,74 +49,74 @@ gem_packages:
   - name: zsteg
 
 pip_packages:
-- git+https://github.com/Tib3rius/AutoRecon.git
-- bintropy
-- distorm3
-- flask
-- ldap3
-- ldapdomaindump
-- minikerberos
-- pwntools
-- pypykatz
-- pyasn1
-- pycryptodomex
-- pyOpenSSL
-- wheel
+  - git+https://github.com/Tib3rius/AutoRecon.git
+  - bintropy
+  - distorm3
+  - flask
+  - ldap3
+  - ldapdomaindump
+  - minikerberos
+  - pwntools
+  - pypykatz
+  - pyasn1
+  - pycryptodomex
+  - pyOpenSSL
+  - wheel
 
 apt_packages:
-- apktool
-- audacity
-- awscli
-- bloodhound
-- build-essential
-- checksec
-- chromium
-- cyberchef
-- docker.io
-- docker-compose
-- dnsrecon
-- enum4linux
-- exiftool
-- fcrackzip
-- filezilla
-- gdb
-- ghidra
-- gimp
-- gobuster
-- haveged
-- htop
-- imagemagick
-- impacket-scripts
-- libreoffice
-- maltego
-- maven
-- neo4j
-- neovim
-- openjdk-11-jdk
-- outguess
-- pdfcrack
-- pngcheck
-- powershell
-- python3-dev
-- python3-evtx
-- python3-impacket
-- python3-jwcrypto
-- python3-venv
-- qemu-user-static
-- qrencode
-- redis-tools
-- rkhunter
-- sliver
-- snmp-mibs-downloader
-- sonic-visualiser
-- stegcracker
-- stegsnow
-- termshark
-- torbrowser-launcher
-- tor
-- winetricks
-- wireguard
-- wireguard-tools
-- yara
-- zbar-tools
-- zeek
+  - apktool
+  - audacity
+  - awscli
+  - bloodhound
+  - build-essential
+  - checksec
+  - chromium
+  - cyberchef
+  - docker.io
+  - docker-compose
+  - dnsrecon
+  - enum4linux
+  - exiftool
+  - fcrackzip
+  - filezilla
+  - gdb
+  - ghidra
+  - gimp
+  - gobuster
+  - haveged
+  - htop
+  - imagemagick
+  - impacket-scripts
+  - libreoffice
+  - maltego
+  - maven
+  - neo4j
+  - neovim
+  - openjdk-11-jdk
+  - outguess
+  - pdfcrack
+  - pngcheck
+  - powershell
+  - python3-dev
+  - python3-evtx
+  - python3-impacket
+  - python3-jwcrypto
+  - python3-venv
+  - qemu-user-static
+  - qrencode
+  - redis-tools
+  - rkhunter
+  - sliver
+  - snmp-mibs-downloader
+  - sonic-visualiser
+  - stegcracker
+  - stegsnow
+  - termshark
+  - torbrowser-launcher
+  - tor
+  - winetricks
+  - wireguard
+  - wireguard-tools
+  - yara
+  - zbar-tools
+  - zeek

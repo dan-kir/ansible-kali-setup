@@ -3,7 +3,7 @@
   ansible.builtin.copy:
     src: kali-wallpaper-custom.jpg
     dest: "/usr/share/wallpapers/kali-wallpaper-custom.jpg"
-    mode: 0644
+    mode: "0644"
   register: wallpaper_change
 
 - name: WALLPAPER - Set wallpaper using xconf

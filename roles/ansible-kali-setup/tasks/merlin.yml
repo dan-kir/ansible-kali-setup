@@ -19,7 +19,7 @@
   when: merlin_check.stat.exists == false
 
 - name: MERLIN - Unzip Merlin 7z archive
-  ansible.builtin.command:  "7z x /tmp/merlinServer-Linux-x64.7z -o'/opt/merlin/' -p'merlin'"
+  ansible.builtin.command: "7z x /tmp/merlinServer-Linux-x64.7z -o'/opt/merlin/' -p'merlin'"
   when: merlin_check.stat.exists == false
 
 ## Pre-compiled Merlin Agent binary files are distributed with the server download in the /opt/merlin/data/bin/ directory

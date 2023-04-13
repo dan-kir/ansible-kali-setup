@@ -1,8 +1,8 @@
 ---
 - name: APT-CLEAN - Remove useless packages from the cache
   ansible.builtin.apt:
-    autoclean: yes
+    autoclean: true
 
 - name: APT-CLEAN - Remove dependencies that are no longer required
   ansible.builtin.apt:
-    autoremove: yes
+    autoremove: true

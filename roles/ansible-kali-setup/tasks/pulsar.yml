@@ -12,7 +12,7 @@
   check_mode: false
 
 - name: PULSAR - Download Pulsar AppImage
-  ansible.builtin.get_url :
+  ansible.builtin.get_url:
     url: https://api.cirrus-ci.com/v1/artifact/task/4549166127382528/binary/binaries/Pulsar-1.103.2023040323.AppImage
     dest: /home/{{ kali_user }}/.local/share/appimage/Pulsar.AppImage
   when: pulsar_appimage_check.stat.exists == false
