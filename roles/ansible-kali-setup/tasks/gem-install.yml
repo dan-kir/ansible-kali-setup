@@ -6,7 +6,7 @@
   check_mode: false
 
 - name: GEM-INSTALL - Install Ruby Gems
-  gem:
+  community.general.gem:
     name: "{{ item.name }}"
     state: latest
   with_items: "{{ gem_packages }}"
