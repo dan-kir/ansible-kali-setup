@@ -10,7 +10,7 @@
   ansible.builtin.find:
     paths: /usr/share/firefox-esr/distribution/extensions/
     patterns: "*.xpi"
-    recurse: no
+    recurse: false
   register: firefox_addons_check
 
 - name: FIREFOX - Download extension files

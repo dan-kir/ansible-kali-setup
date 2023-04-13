@@ -6,12 +6,12 @@ galaxy_info:
   description: Post install setup role for Kali Linux
   company: Dan Kir
   license: GPL-3.0 License
-  min_ansible_version: 2.10
+  min_ansible_version: "2.10"
   platforms:
-  - name: Kali
-    versions:
-      - 2023.1
+    - name: Debian
+      versions:
+        - all
   galaxy_tags:
-  - security
-  - system
-  - linux
+    - security
+    - system
+    - linux

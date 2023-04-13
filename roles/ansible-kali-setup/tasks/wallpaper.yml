@@ -7,6 +7,8 @@
   register: wallpaper_change
 
 - name: WALLPAPER - Set wallpaper using xconf
-  ansible.builtin.shell: "xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual-1/workspace0/last-image -s /usr/share/wallpapers/kali-wallpaper-custom.jpg"
+  ansible.builtin.shell: "xfconf-query -c xfce4-desktop -p \
+                          /backdrop/screen0/monitorVirtual-1/workspace0/last-image \
+                          -s /usr/share/wallpapers/kali-wallpaper-custom.jpg"
   when: wallpaper_change.changed
   become: false
