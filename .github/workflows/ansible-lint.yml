@@ -11,9 +11,8 @@ jobs:
     # Important: This sets up your GITHUB_WORKSPACE environment variable
     - uses: actions/checkout@v3
 
-    - name: Install dependencies
-        run: |
-          ansible-galaxy collection install community.general
+    - name: Install Ansible collections
+        run: ansible-galaxy collection install community.general
 
     - name: Lint Ansible Playbook
       # replace "master" with any valid ref
