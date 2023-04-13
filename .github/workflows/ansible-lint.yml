@@ -12,7 +12,8 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Install Ansible collections
-        run: ansible-galaxy collection install community.general
+      run: |
+        ansible-galaxy collection install community.general
 
     - name: Lint Ansible Playbook
       # replace "master" with any valid ref
