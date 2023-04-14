@@ -13,6 +13,10 @@
   when:
     - golang_enabled | bool
 
+- ansible.builtin.import_tasks: havoc.yml
+  when:
+    - havoc_enabled | bool
+
 - ansible.builtin.import_tasks: docker.yml
 
 - ansible.builtin.import_tasks: dettect.yml

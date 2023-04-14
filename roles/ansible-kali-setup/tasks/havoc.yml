@@ -1,0 +1,41 @@
+---
+- name: HAVOC - Install Havoc dependencies
+  ansible.builtin.apt:
+    name: "{{ havoc_dependencies }}"
+    state: present
+
+- name: HAVOC - Git clone the Havoc repo
+  ansible.builtin.git:
+    repo: https://github.com/HavocFramework/Havoc.git
+    dest: /opt/Havoc
+
+- name: HAVOC - Build the Havoc Client
+  community.general.make:
+    chdir: /opt/Havoc/Client
+
+- name: HAVOC - Install Golang Sys package
+  ansible.builtin.command: "go mod download golang.org/x/sys"
+
+- name: HAVOC - Install Golang codec package
+  ansible.builtin.command: "go mod download github.com/ugorji/go"
+
+- name: HAVOC - Check if MUSL C Compiler installed
+  ansible.builtin.stat:
+    path: /opt/Havoc/Teamserver/data/x86_64-w64-mingw32-cross/
+  register: musl_check
+  check_mode: false
+
+- name: HAVOC - Download and extract MUSL C Compiler
+  ansible.builtin.unarchive:
+    src: https://musl.cc/x86_64-w64-mingw32-cross.tgz
+    dest: /opt/Havoc/Teamserver/data/
+    remote_src: yes
+  when: musl_check.stat.exists == False
+  ignore_errors: yes
+
+- name: HAVOC - Build the Havoc Teamserver
+  community.general.make:
+    chdir: /opt/Havoc/Teamserver
+
+## Run the Teamserver
+## sudo ./teamserver server --profile ./profiles/havoc.yaotl -v --debug

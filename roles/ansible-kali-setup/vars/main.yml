@@ -120,3 +120,42 @@ apt_packages:
   - yara
   - zbar-tools
   - zeek
+
+havoc_dependencies:
+  - git
+  - build-essential
+  - apt-utils
+  - cmake
+  - libfontconfig1
+  - libglu1-mesa-dev
+  - libgtest-dev
+  - libspdlog-dev
+  - libboost-all-dev
+  - libncurses5-dev
+  - libgdbm-dev
+  - libssl-dev
+  - libreadline-dev
+  - libffi-dev
+  - libsqlite3-dev
+  - libbz2-dev
+  - mesa-common-dev
+  - mingw-w64
+  - qtbase5-dev
+  - qtchooser
+  - qt5-qmake
+  - qtbase5-dev-tools
+  - libqt5websockets5
+  - libqt5websockets5-dev
+  - qtdeclarative5-dev
+  - golang-go
+  - qtbase5-dev
+  - libqt5websockets5-dev
+  - libspdlog-dev
+  - python3-dev
+  - python3.11-dev
+  - libpython3.11
+  - libpython3.11-dev
+  - python3.11
+  - libboost-all-dev
+  - mingw-w64
+  - nasm
