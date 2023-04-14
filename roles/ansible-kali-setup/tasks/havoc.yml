@@ -8,16 +8,24 @@
   ansible.builtin.git:
     repo: https://github.com/HavocFramework/Havoc.git
     dest: /opt/Havoc
+  ignore_errors: true
 
 - name: HAVOC - Build the Havoc Client
   community.general.make:
     chdir: /opt/Havoc/Client
+  changed_when: false
 
 - name: HAVOC - Install Golang Sys package
   ansible.builtin.command: "go mod download golang.org/x/sys"
+  args:
+    chdir: /opt/Havoc/Teamserver/
+  changed_when: false
 
 - name: HAVOC - Install Golang codec package
   ansible.builtin.command: "go mod download github.com/ugorji/go"
+  args:
+    chdir: /opt/Havoc/Teamserver/
+  changed_when: false
 
 - name: HAVOC - Check if MUSL C Compiler installed
   ansible.builtin.stat:
@@ -36,6 +44,7 @@
 - name: HAVOC - Build the Havoc Teamserver
   community.general.make:
     chdir: /opt/Havoc/Teamserver
+  changed_when: false
 
 ## Run the Teamserver
 ## sudo ./teamserver server --profile ./profiles/havoc.yaotl -v --debug
