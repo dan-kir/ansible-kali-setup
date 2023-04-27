@@ -23,6 +23,8 @@
 
 - ansible.builtin.import_tasks: die.yml
 
+- ansible.builtin.import_tasks: kubectl.yml
+
 - ansible.builtin.import_tasks: ngrok.yml
 
 - ansible.builtin.import_tasks: merlin.yml

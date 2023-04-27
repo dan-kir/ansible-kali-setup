@@ -56,11 +56,13 @@ pip_packages:
   - ldap3
   - ldapdomaindump
   - minikerberos
+  - pwncat-cs
   - pwntools
   - pypykatz
   - pyasn1
   - pycryptodomex
   - pyOpenSSL
+  - updog
   - wheel
 
 apt_packages:

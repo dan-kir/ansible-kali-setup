@@ -27,6 +27,7 @@ Software List
 - Golang - https://go.dev/
 - Imagemagick - https://imagemagick.org/
 - Impacket - https://github.com/fortra/impacket
+- Kubectl - https://kubernetes.io/docs/reference/kubectl/
 - LibreOffice - https://www.libreoffice.org/
 - Maltego - https://www.maltego.com/
 - Merlin C2 - https://github.com/Ne0nd0g/merlin
@@ -36,6 +37,7 @@ Software List
 - Pdfcrack - https://github.com/alitrack/PDFCrack
 - Pngcheck - http://www.libpng.org/pub/png/apps/pngcheck.html
 - Pulsar Edit - https://pulsar-edit.dev/
+- Pwncat - https://github.com/calebstewart/pwncat
 - Pwntools - https://github.com/Gallopsled/pwntools
 - Pypykatz - https://github.com/skelsec/pypykatz
 - Qrencode - https://github.com/fukuchi/libqrencode/
@@ -54,6 +56,7 @@ Software List
 - Stegsnow - https://darkside.com.au/snow/
 - Termshark - https://github.com/gcla/termshark
 - Tor Browser - https://www.torproject.org/download/
+- Updog - https://github.com/sc0tfree/updog
 - Volatility 3 - https://github.com/volatilityfoundation/volatility3
 - Winetricks - https://github.com/Winetricks/winetricks
 - Yara - https://virustotal.github.io/yara/
