@@ -16,7 +16,7 @@
   register: volatility_symbols_check
   check_mode: false
 
-- name: VOLATILITY3 - Download Volatility Windows Symbols
+- name: VOLATILITY3 - Download Volatility Windows Symbols (this might take a while)
   ansible.builtin.get_url:
     url: https://downloads.volatilityfoundation.org/volatility3/symbols/windows.zip
     dest: /usr/share/volatility3/volatility3/symbols/windows.zip

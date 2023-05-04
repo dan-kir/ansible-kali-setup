@@ -71,6 +71,7 @@ apt_packages:
   - awscli
   - bloodhound
   - build-essential
+  - caldera
   - checksec
   - chromium
   - cyberchef

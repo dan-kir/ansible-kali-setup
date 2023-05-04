@@ -7,6 +7,7 @@ Software List
 - AWS CLI - https://aws.amazon.com/cli/
 - Bintropy - https://pypi.org/project/bintropy/
 - Bloodhound - https://github.com/BloodHoundAD/BloodHound
+- Caldera - https://github.com/mitre/caldera
 - Chromium - https://www.chromium.org/Home/
 - CyberChef - https://github.com/gchq/CyberChef
 - DeTT&CT - https://github.com/rabobank-cdc/DeTTECT
@@ -25,7 +26,9 @@ Software List
 - Gimp - https://www.gimp.org/
 - Gobuster - https://github.com/OJ/gobuster
 - Golang - https://go.dev/
+- Havoc - https://github.com/HavocFramework/Havoc
 - Imagemagick - https://imagemagick.org/
+- ImHex - https://github.com/WerWolv/ImHex
 - Impacket - https://github.com/fortra/impacket
 - Kubectl - https://kubernetes.io/docs/reference/kubectl/
 - LibreOffice - https://www.libreoffice.org/

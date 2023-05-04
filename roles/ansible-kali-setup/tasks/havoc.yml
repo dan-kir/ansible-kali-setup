@@ -10,40 +10,40 @@
     dest: /opt/Havoc
   ignore_errors: true
 
-- name: HAVOC - Build the Havoc Client
-  community.general.make:
-    chdir: /opt/Havoc/Client
-  changed_when: false
+- name: HAVOC - Create teamserver data directory
+  ansible.builtin.file:
+    path: /opt/Havoc/teamserver/data/
+    state: directory
 
 - name: HAVOC - Install Golang Sys package
   ansible.builtin.command: "go mod download golang.org/x/sys"
   args:
-    chdir: /opt/Havoc/Teamserver/
+    chdir: /opt/Havoc/teamserver/
   changed_when: false
 
 - name: HAVOC - Install Golang codec package
   ansible.builtin.command: "go mod download github.com/ugorji/go"
   args:
-    chdir: /opt/Havoc/Teamserver/
+    chdir: /opt/Havoc/teamserver/
   changed_when: false
 
 - name: HAVOC - Check if MUSL C Compiler installed
   ansible.builtin.stat:
-    path: /opt/Havoc/Teamserver/data/x86_64-w64-mingw32-cross/
+    path: /opt/Havoc/teamserver/data/x86_64-w64-mingw32-cross/
   register: musl_check
   check_mode: false
 
 - name: HAVOC - Download and extract MUSL C Compiler
   ansible.builtin.unarchive:
     src: https://musl.cc/x86_64-w64-mingw32-cross.tgz
-    dest: /opt/Havoc/Teamserver/data/
+    dest: /opt/Havoc/teamserver/data/
     remote_src: yes
   when: musl_check.stat.exists == False
   ignore_errors: yes
 
-- name: HAVOC - Build the Havoc Teamserver
+- name: HAVOC - Build the Havoc binaries
   community.general.make:
-    chdir: /opt/Havoc/Teamserver
+    chdir: /opt/Havoc/
   changed_when: false
 
 ## Run the Teamserver

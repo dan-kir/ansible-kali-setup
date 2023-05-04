@@ -1,0 +1,26 @@
+---
+- name: IMHEX - Create AppImages directory
+  ansible.builtin.file:
+    path: /home/{{ kali_user }}/.local/share/appimage/
+    state: directory
+    owner: "{{ kali_user }}"
+
+- name: IMHEX - Check that ImHex AppImage does not already exist
+  ansible.builtin.stat:
+    path: /home/{{ kali_user }}/.local/share/appimage/ImHex.AppImage
+  register: imhex_appimage_check
+  check_mode: false
+
+- name: IMHEX - Download ImHex AppImage
+  ansible.builtin.get_url:
+    url: https://github.com/WerWolv/ImHex/releases/download/v1.28.0/imhex-1.28.0-x86_64.AppImage
+    dest: /home/{{ kali_user }}/.local/share/appimage/ImHex.AppImage
+  when: imhex_appimage_check.stat.exists == false
+  ignore_errors: true
+
+- name: IMHEX - Make ImHex AppImage executable
+  ansible.builtin.file:
+    path: /home/{{ kali_user }}/.local/share/appimage/ImHex.AppImage
+    owner: "{{ kali_user }}"
+    group: "{{ kali_user }}"
+    mode: 'u+x'
