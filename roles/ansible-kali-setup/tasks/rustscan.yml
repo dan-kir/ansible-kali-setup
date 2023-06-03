@@ -1,7 +1,7 @@
 ---
 - name: RUSTSCAN - Pull latest rustscan Docker image
   community.docker.docker_image:
-    name: rustscan/rustscan:alpine
+    name: rustscan/rustscan:latest
     source: pull
   register: rustscan_image
 

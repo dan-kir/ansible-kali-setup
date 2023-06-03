@@ -9,8 +9,10 @@
   ansible.builtin.unarchive:
     src: https://github.com/fullstorydev/grpcurl/releases/download/v1.8.7/grpcurl_1.8.7_linux_x86_64.tar.gz
     dest: /usr/share/grpc-tools/
+    remote_src: true
 
 - name: GRPC-TOOLS - Download and extract grpcui binary release
   ansible.builtin.unarchive:
     src: https://github.com/fullstorydev/grpcui/releases/download/v1.3.1/grpcui_1.3.1_linux_x86_64.tar.gz
     dest: /usr/share/grpc-tools/
+    remote_src: true
