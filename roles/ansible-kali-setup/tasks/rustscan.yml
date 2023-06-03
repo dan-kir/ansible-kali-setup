@@ -1,0 +1,10 @@
+---
+- name: RUSTSCAN - Pull latest rustscan Docker image
+  community.docker.docker_image:
+    name: rustscan/rustscan:alpine
+    source: pull
+  register: rustscan_image
+
+# docker run -it --rm --name rustscan rustscan/rustscan:alpine <rustscan arguments here> <ip address to scan>
+
+# alias rustscan='docker run -it --rm --name rustscan rustscan/rustscan:alpine'

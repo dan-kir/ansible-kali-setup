@@ -1,0 +1,16 @@
+---
+- name: GRPC-TOOLS - Create grpc-tools directory
+  ansible.builtin.file:
+    path: /usr/share/grpc-tools
+    state: directory
+
+## Should maybe download to /usr/local/bin/
+- name: GRPC-TOOLS - Download and extract grpcurl binary release
+  ansible.builtin.unarchive:
+    src: https://github.com/fullstorydev/grpcurl/releases/download/v1.8.7/grpcurl_1.8.7_linux_x86_64.tar.gz
+    dest: /usr/share/grpc-tools/
+
+- name: GRPC-TOOLS - Download and extract grpcui binary release
+  ansible.builtin.unarchive:
+    src: https://github.com/fullstorydev/grpcui/releases/download/v1.3.1/grpcui_1.3.1_linux_x86_64.tar.gz
+    dest: /usr/share/grpc-tools/

@@ -15,6 +15,7 @@ seclists_enabled: true
 
 sharpcollection_enabled: true
 
+## Note volatility symbols are slow to download
 volatility3_enabled: false
 
 wallpaper_enabled: true

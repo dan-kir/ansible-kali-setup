@@ -80,6 +80,7 @@ apt_packages:
   - dnsrecon
   - enum4linux
   - exiftool
+  - feroxbuster
   - fcrackzip
   - filezilla
   - gdb
@@ -95,11 +96,16 @@ apt_packages:
   - maven
   - neo4j
   - neovim
+  - nodejs
+  - npm
   - openjdk-11-jdk
   - outguess
+  - oscanner
   - pdfcrack
+  - peass
   - pngcheck
   - powershell
+  - pwncat
   - python3-dev
   - python3-evtx
   - python3-impacket
@@ -109,17 +115,20 @@ apt_packages:
   - qrencode
   - redis-tools
   - rkhunter
+  - rlwrap
   - sliver
   - snmp-mibs-downloader
   - sonic-visualiser
   - stegcracker
   - stegsnow
   - termshark
+  - tnscmd10g
   - torbrowser-launcher
   - tor
   - winetricks
   - wireguard
   - wireguard-tools
+  - wkhtmltopdf
   - yara
   - zbar-tools
   - zeek

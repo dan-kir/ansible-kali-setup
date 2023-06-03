@@ -23,6 +23,8 @@
 
 - ansible.builtin.import_tasks: die.yml
 
+- ansible.builtin.import_tasks: grpc-tools.yml
+
 - ansible.builtin.import_tasks: imhex.yml
 
 - ansible.builtin.import_tasks: kubectl.yml
@@ -40,6 +42,8 @@
 - ansible.builtin.import_tasks: rust.yml
   when:
     - rust_enabled | bool
+
+- ansible.builtin.import_tasks: rustscan.yml
 
 - ansible.builtin.import_tasks: rsactftool.yml
 

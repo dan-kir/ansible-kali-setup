@@ -38,6 +38,7 @@ Software List
 - Ngrok - https://ngrok.com/
 - Outguess - https://github.com/resurrecting-open-source-projects/outguess
 - Pdfcrack - https://github.com/alitrack/PDFCrack
+- PEASS - https://github.com/carlospolop/PEASS-ng
 - Pngcheck - http://www.libpng.org/pub/png/apps/pngcheck.html
 - Pulsar Edit - https://pulsar-edit.dev/
 - Pwncat - https://github.com/calebstewart/pwncat
@@ -48,8 +49,10 @@ Software List
 - Redpoint NSE Scripts - https://github.com/digitalbond/Redpoint
 - RITA - https://github.com/activecm/rita
 - Rkhunter - https://rkhunter.sourceforge.net/
+- Rlwrap - https://github.com/hanslub42/rlwrap
 - RsaCtfTool - https://github.com/RsaCtfTool/RsaCtfTool
 - Rust - https://www.rust-lang.org/
+- RustScan - https://rustscan.github.io/RustScan/
 - Sagemath - https://www.sagemath.org/
 - Seclists - https://github.com/danielmiessler/SecLists
 - Sharpcollection - https://github.com/Flangvik/SharpCollection
