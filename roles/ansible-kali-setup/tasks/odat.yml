@@ -1,0 +1,11 @@
+---
+- name: ODAT - Create ODAT directory
+  ansible.builtin.file:
+    path: /usr/share/odat/
+    state: directory
+
+- name: ODAT - Download and extract ODAT standalone release
+  ansible.builtin.unarchive:
+    src: https://github.com/quentinhardy/odat/releases/download/5.1.1/odat-linux-libc2.17-x86_64.tar.gz
+    dest: /usr/share/odat/
+    remote_src: true

@@ -125,6 +125,7 @@ apt_packages:
   - tnscmd10g
   - torbrowser-launcher
   - tor
+  - unicornscan
   - winetricks
   - wireguard
   - wireguard-tools
@@ -151,7 +152,6 @@ havoc_dependencies:
   - libsqlite3-dev
   - libbz2-dev
   - mesa-common-dev
-  - mingw-w64
   - qtbase5-dev
   - qtchooser
   - qt5-qmake
@@ -162,12 +162,7 @@ havoc_dependencies:
   - golang-go
   - qtbase5-dev
   - libqt5websockets5-dev
-  - libspdlog-dev
   - python3-dev
-  - python3.11-dev
-  - libpython3.11
-  - libpython3.11-dev
-  - python3.11
   - libboost-all-dev
   - mingw-w64
   - nasm

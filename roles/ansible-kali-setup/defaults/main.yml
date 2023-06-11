@@ -3,8 +3,7 @@ kali_user: kali
 
 golang_enabled: true
 
-## Issues atm with Havoc building
-havoc_enabled: false
+havoc_enabled: true
 
 rust_enabled: true
 

@@ -5,6 +5,6 @@
     source: pull
   register: rustscan_image
 
-# docker run -it --rm --name rustscan rustscan/rustscan:alpine <rustscan arguments here> <ip address to scan>
+# docker run -it --rm --name rustscan rustscan/rustscan:latest <rustscan arguments here> <ip address to scan>
 
-# alias rustscan='docker run -it --rm --name rustscan rustscan/rustscan:alpine'
+# alias rustscan='docker run -it --rm --name rustscan rustscan/rustscan:latest'

@@ -36,6 +36,7 @@ Software List
 - Merlin C2 - https://github.com/Ne0nd0g/merlin
 - Neovim - https://neovim.io/
 - Ngrok - https://ngrok.com/
+- ODAT - https://github.com/quentinhardy/odat
 - Outguess - https://github.com/resurrecting-open-source-projects/outguess
 - Pdfcrack - https://github.com/alitrack/PDFCrack
 - PEASS - https://github.com/carlospolop/PEASS-ng
@@ -62,6 +63,7 @@ Software List
 - Stegsnow - https://darkside.com.au/snow/
 - Termshark - https://github.com/gcla/termshark
 - Tor Browser - https://www.torproject.org/download/
+- Unicornscan - https://sectools.org/tool/unicornscan/
 - Updog - https://github.com/sc0tfree/updog
 - Volatility 3 - https://github.com/volatilityfoundation/volatility3
 - Winetricks - https://github.com/Winetricks/winetricks
