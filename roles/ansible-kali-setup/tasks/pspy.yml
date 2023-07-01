@@ -1,0 +1,25 @@
+---
+- name: PSPY - Create pspy directory
+  ansible.builtin.file:
+    path: /usr/share/pspy
+    state: directory
+
+- name: PSPY - Download 32 bit big pspy32 binary release
+  ansible.builtin.get_url:
+    url: https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy32
+    dest: /usr/share/pspy/
+
+- name: PSPY - Download 32 bit small pspy32s binary release
+  ansible.builtin.get_url:
+    url: https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy32s
+    dest: /usr/share/pspy/
+
+- name: PSPY - Download 64 bit big pspy64 binary release
+  ansible.builtin.get_url:
+    url: https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy64
+    dest: /usr/share/pspy/
+
+- name: PSPY - Download 64 bit small pspy64s binary release
+  ansible.builtin.get_url:
+    url: https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy64s
+    dest: /usr/share/pspy/

@@ -70,6 +70,7 @@ apt_packages:
   - audacity
   - awscli
   - bloodhound
+  - bloodhound.py
   - build-essential
   - caldera
   - checksec
@@ -92,8 +93,10 @@ apt_packages:
   - imagemagick
   - impacket-scripts
   - libreoffice
+  - libsasl2-modules-gssapi-mit
   - maltego
   - maven
+  - mongodb-clients
   - neo4j
   - neovim
   - nodejs

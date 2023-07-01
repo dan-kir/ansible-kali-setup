@@ -23,6 +23,8 @@
 
 - ansible.builtin.import_tasks: die.yml
 
+- ansible.builtin.import_tasks: firefox.yml
+
 - ansible.builtin.import_tasks: grpc-tools.yml
 
 - ansible.builtin.import_tasks: imhex.yml
@@ -35,7 +37,7 @@
 
 - ansible.builtin.import_tasks: pulsar.yml
 
-- ansible.builtin.import_tasks: firefox.yml
+- ansible.builtin.import_tasks: pspy.yml
 
 - ansible.builtin.import_tasks: rita.yml
 
