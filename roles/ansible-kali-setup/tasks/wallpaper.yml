@@ -13,7 +13,7 @@
                           -s /usr/share/wallpapers/kali-wallpaper-custom.jpg"
   when:
     - wallpaper_change.changed
-    - ansible_facts['ansible_virtualization_type'] == "kvm"
+    - ansible_virtualization_type == "kvm"
   become: false
 
 - name: WALLPAPER - Set wallpaper using xconf (Vmware)
@@ -22,7 +22,7 @@
                           -s /usr/share/wallpapers/kali-wallpaper-custom.jpg"
   when:
     - wallpaper_change.changed
-    - ansible_facts['ansible_virtualization_type'] == "VMware"
+    - ansible_virtualization_type == "VMware"
   become: false
 
 - name: WALLPAPER - Set wallpaper using xconf (Virtualbox)
@@ -31,5 +31,5 @@
                           -s /usr/share/wallpapers/kali-wallpaper-custom.jpg"
   when:
     - wallpaper_change.changed
-    - ansible_facts['ansible_virtualization_type'] == "Virtualbox"
+    - ansible_virtualization_type == "Virtualbox"
   become: false
