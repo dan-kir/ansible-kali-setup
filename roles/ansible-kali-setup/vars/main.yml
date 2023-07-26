@@ -92,6 +92,7 @@ apt_packages:
   - htop
   - imagemagick
   - impacket-scripts
+  - jq
   - libreoffice
   - libsasl2-modules-gssapi-mit
   - maltego

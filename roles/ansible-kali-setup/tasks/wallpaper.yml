@@ -1,4 +1,5 @@
 ---
+## This might not work as intended with multiple displays
 - name: WALLPAPER - Copy wallpaper to /usr/share/wallpapers
   ansible.builtin.copy:
     src: kali-wallpaper-custom.jpg
@@ -6,9 +7,29 @@
     mode: "0644"
   register: wallpaper_change
 
-- name: WALLPAPER - Set wallpaper using xconf
+- name: WALLPAPER - Set wallpaper using xconf (kvm)
   ansible.builtin.shell: "xfconf-query -c xfce4-desktop -p \
                           /backdrop/screen0/monitorVirtual-1/workspace0/last-image \
                           -s /usr/share/wallpapers/kali-wallpaper-custom.jpg"
-  when: wallpaper_change.changed
+  when:
+    - wallpaper_change.changed
+    - ansible_facts['ansible_virtualization_type'] == "kvm"
+  become: false
+
+- name: WALLPAPER - Set wallpaper using xconf (Vmware)
+  ansible.builtin.shell: "xfconf-query -c xfce4-desktop -p \
+                          /backdrop/screen0/monitorVirtual1/workspace0/last-image \
+                          -s /usr/share/wallpapers/kali-wallpaper-custom.jpg"
+  when:
+    - wallpaper_change.changed
+    - ansible_facts['ansible_virtualization_type'] == "VMware"
+  become: false
+
+- name: WALLPAPER - Set wallpaper using xconf (Virtualbox)
+  ansible.builtin.shell: "xfconf-query -c xfce4-desktop -p \
+                          /backdrop/screen0/monitorVirtual1/workspace0/last-image \
+                          -s /usr/share/wallpapers/kali-wallpaper-custom.jpg"
+  when:
+    - wallpaper_change.changed
+    - ansible_facts['ansible_virtualization_type'] == "Virtualbox"
   become: false
