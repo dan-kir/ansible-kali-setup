@@ -13,7 +13,7 @@
 
 - name: DIE - Download Detect-it-Easy AppImage
   ansible.builtin.get_url:
-    url: https://github.com/horsicq/DIE-engine/releases/download/3.07/Detect_It_Easy-3.07-x86_64.AppImage
+    url: https://github.com/horsicq/DIE-engine/releases/download/3.08/Detect_It_Easy-3.08-x86_64.AppImage
     dest: /home/{{ kali_user }}/.local/share/appimage/Detect_It_Easy.AppImage
   when: die_appimage_check.stat.exists == false
   ignore_errors: true
