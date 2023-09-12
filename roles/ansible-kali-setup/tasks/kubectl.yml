@@ -10,4 +10,4 @@
     url: https://dl.k8s.io/release/v1.28.1/bin/linux/amd64/kubectl
     dest: /usr/share/kubectl/
     mode: '0755'
-    ignore_errors: true
+  ignore_errors: true

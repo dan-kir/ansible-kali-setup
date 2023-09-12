@@ -15,12 +15,14 @@
     chdir: /opt/Havoc/
     target: ts-build
   changed_when: false
+  ignore_errors: true
 
 - name: HAVOC - Build the Havoc client
   community.general.make:
     chdir: /opt/Havoc/
     target: client-build
   changed_when: false
+  ignore_errors: true
 
 ## Run the Teamserver
 ## sudo ./havoc server --profile profiles/havoc.yaotl -v --debug

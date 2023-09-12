@@ -3,7 +3,7 @@ kali_user: kali
 
 golang_enabled: true
 
-havoc_enabled: true
+havoc_enabled: false
 
 rust_enabled: true
 
